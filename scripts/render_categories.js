@@ -36,6 +36,10 @@ function renderCategories() {
   // Add code here
   for (let i = 0; i < categories.length; i++) {
     console.log(categories[i]);
-    var html = '<div class='category'><div class='category-cell'>$</div></div>'
+    var html =
+      "<div class='category'><div class='category-cell'>" +
+      categories[i] +
+      "</div></div>";
+    $("#categories").append(html);
   }
 }
