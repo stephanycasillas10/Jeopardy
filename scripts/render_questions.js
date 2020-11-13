@@ -41,4 +41,12 @@ let questionValues = [100, 200, 300, 400, 500];
  */
 function renderQuestions() {
   // Add code here
+  for (let i = 0; i < numCategories; i++) {
+    for (let q = 0; q < questionValues.length; q++) {
+      const question = questionValues[q];
+      const cell = `<div class ='question'><div class ='question-cell'>${question}</div></div>`;
+      const questionColumns = `<div class ='questions-column'><div class='question-cell'>cell</div>`;
+      $("#question").append(questionColumns);
+    }
+  }
 }
