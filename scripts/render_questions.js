@@ -12,9 +12,6 @@ let questionValues = [100, 200, 300, 400, 500];
  *      HINT: Use a for/of loop
  *      Need more help? Check out https://mzl.la/3lDHxIq or ask a volunteer.
  *
- * 3. Create an HTML string for each question. It should look like this:
- *      <div class='question'><div class='question-cell'>VALUE</div></div>
- *
  * * 3. Create an HTML string for each column and question. It should look like this:  *
  *     <div class='questions-column'> *
  *     <div class='question-cell'>VALUE</div>*
@@ -42,11 +39,17 @@ let questionValues = [100, 200, 300, 400, 500];
 function renderQuestions() {
   // Add code here
   for (let i = 0; i < numCategories; i++) {
+    let questionColumns = "<div class ='questions-column'>";
     for (let q = 0; q < questionValues.length; q++) {
-      const question = questionValues[q];
-      const cell = `<div class ='question'><div class ='question-cell'>${question}</div></div>`;
-      const questionColumns = `<div class ='questions-column'><div class='question-cell'>cell</div>`;
-      $("#question").append(questionColumns);
+      questionColumns =
+        questionColumns +
+        "<div class='question-cell' data-category='" +
+        i +
+        "'>$" +
+        questionValues[q] +
+        "</div>";
     }
+    questionColumns = questionColumns + "</div>";
+    $("#questions").append(questionColumns);
   }
 }
